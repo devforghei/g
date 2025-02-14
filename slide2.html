@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Memories</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffe6e6;
+            margin: 0;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 1s, transform 1s;
+            max-width: 80%;
+        }
+
+        .show-content {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .next-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: none;
+            background-color: #ff4d6d;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .next-button:hover {
+            background-color: #e63950;
+        }
+    </style>
+</head>
+<body>
+    <div class="content" id="content">
+        <h2>Our Beautiful Memories Together</h2>
+        <p>Every moment with you feels like a dream. From our first date to our late-night talks, each memory is special.</p>
+        <img src="image 1.jpeg" alt="Our Memory">
+        <br>
+        <button class="next-button" onclick="nextSlide()">Next ➝</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("content").classList.add("show-content");
+        });
+
+        function nextSlide() {
+            window.location.href = "slide3.html";
+        }
+    </script>
+</body>
+</html>
