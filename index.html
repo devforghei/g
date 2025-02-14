@@ -3,74 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For Getsa ❤️</title>
+    <title>For Getsa 💌</title>
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap');
+
         body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ffe4e1;
+            font-family: 'Montserrat', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            overflow: hidden;
+            background-color: #ffe6e6;
+            margin: 0;
         }
+
         .container {
             text-align: center;
-            position: relative;
         }
-        .hidden {
-            display: none;
-        }
-        img {
-            width: 300px;
-            height: auto;
-            border-radius: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-        .btn {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            background-color: #ff4d6d;
-            color: white;
-            border-radius: 10px;
+
+        .envelope {
+            width: 200px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: transform 0.5s ease-in-out;
         }
-        .btn:hover {
-            background-color: #d43f5e;
+
+        .envelope:hover {
+            transform: scale(1.1);
         }
-        .fadeIn {
-            animation: fadeIn 1s ease-in-out;
+
+        .message {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s, transform 0.8s;
+            font-size: 20px;
+            font-weight: bold;
+            color: #d6336c;
+            margin-top: 20px;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-20px); }
-            to { opacity: 1; transform: translateY(0); }
+
+        .show-message {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <div class="container" id="startScreen">
-        <img src="IMG_5425.jpeg" alt="Devan & Getsa">
-        <h2>For My Dearest Getsa ❤️</h2>
-        <button class="btn" onclick="showMessage()">Click Here 💕</button>
-    </div>
-    
-    <div class="container hidden" id="messageScreen">
-        <h1>For Getsa ❤️</h1>
-        <p>Dear Getsa,</p>
-        <p>[Tulis longtext di sini nanti]</p>
-        <p>Love, Devan 💕</p>
+    <div class="container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Envelope_font_awesome.svg/512px-Envelope_font_awesome.svg.png" 
+            alt="Love Letter" class="envelope" id="envelope">
+        <div class="message" id="message">For Getsa, With Love 💕</div>
     </div>
 
     <script>
-        function showMessage() {
-            document.getElementById("startScreen").classList.add("hidden");
-            document.getElementById("messageScreen").classList.remove("hidden");
-            document.getElementById("messageScreen").classList.add("fadeIn");
-        }
+        document.getElementById("envelope").addEventListener("click", function() {
+            document.getElementById("message").classList.add("show-message");
+            setTimeout(function() {
+                window.location.href = "slide2.html";
+            }, 2000);
+        });
     </script>
 </body>
 </html>
